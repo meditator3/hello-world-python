@@ -14,7 +14,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build .'
+        sh 'docker build -t hello-world-python.'
       }
     }
 
