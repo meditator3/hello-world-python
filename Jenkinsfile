@@ -14,7 +14,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -t hello-world-python.'
+        sh 'docker build -t arielguez/hello-world-python:$BUILD_NUMBER .'
       }
     }
 
