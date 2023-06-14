@@ -20,7 +20,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'docker run -itd hello-world-python -p 8080:8080 arielguez/hello-world-python:$BUILD_NUMBER '
+        sh 'docker run -itd --name hello-world-python -p 8080:8080 arielguez/hello-world-python:$BUILD_NUMBER '
       }
     }
 
