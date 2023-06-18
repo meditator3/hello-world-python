@@ -17,7 +17,8 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
   Test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: my-image-name:latest
-        run: docker run --name hello-python my_image_name:$(date +%s)
+        run: docker run -itd --name hello-python -p 8080:8080 my_image_name:$(date +%s)
