@@ -19,5 +19,5 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: my-image-name
+      - name: my-image-name:latest
         run: docker run --name hello-python my_image_name:$(date +%s)
