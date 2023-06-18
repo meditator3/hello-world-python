@@ -19,5 +19,5 @@ jobs:
   Test:
     
     steps:
-      name:
-      run: docker run --name hello-python my_image_name:$(date +%s)
+      - name:
+        run: docker run --name hello-python my_image_name:$(date +%s)
