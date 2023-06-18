@@ -1,0 +1,10 @@
+name: some process name
+on:  
+  workflow_dispatch: # meaning only manual! not via push or pull
+jobs:
+   Build: #just a nmae for the job
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v3
+      - name: install requirements
+        run: pip install -r requirements.txt
