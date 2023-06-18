@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-image-name:latest
-        run: docker run -itd --name hello-python -p 8080:8080 my_image_name:$(date +%s)
+        run: docker run -itd --name hello-python -p 8080:8080 my_image_name:latest
