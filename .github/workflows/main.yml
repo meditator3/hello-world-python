@@ -1,6 +1,6 @@
 name: some process name
 on:  
-  workflow_dispatch: # meaning only manual! not via push or pull
+  workflow_dispatch: # meaning only manual! not via push or pull-via run workflow
 jobs:
    Build: #just a nmae for the job
      runs-on: ubuntu-latest
@@ -8,5 +8,16 @@ jobs:
       - uses: actions/checkout@v3
       - name: install requirements
         run: pip install -r requirements.txt
-      - name: run the app and test
-        run: python app.py && sleep 5 && curl localhost:8080 
+      - uses: actions/cache@v3
+        with: #this packages (cache) for it to use in the test
+          path: . #note that this path is not influenced
+          key: python-cache
+   Test:
+     needs: Build
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/cache@v3
+     - name: run the app
+       run: python app.py &
+     - name: test   
+       run: sleep 5 && curl localhost:8080 
