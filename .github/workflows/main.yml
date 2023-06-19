@@ -2,19 +2,19 @@ name: some process name
 on:  
   workflow_dispatch: # meaning only manual! not via push or pull-via run workflow
 jobs:
-   Build: #just a nmae for the job
-     runs-on: ubuntu-latest
+   Build: #just a name for the job
+     runs-on: self-hosted
      steps:
       - uses: actions/checkout@v3
       - name: install requirements
         run: pip install -r requirements.txt
-      - uses: actions/cache@v3
-        with: #this packages (cache) for it to use in the test
-          path: . #note that this path is not influenced
-          key: python-cache
+  #    - uses: actions/cache@v3
+   #     with: #this packages (cache) for it to use in the test
+    #      path: . #note that this path is not influenced
+     #     key: python-cache
    Test:
      needs: Build
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      steps:
      - uses: actions/cache@v3
      - name: run the app
