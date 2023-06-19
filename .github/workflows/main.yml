@@ -7,7 +7,7 @@ jobs:
      steps:
       - uses: actions/checkout@v3
       - name: install requirements
-        run: pip install -r requirements.txt
+        run: pip3 install -r requirements.txt
   #    - uses: actions/cache@v3
    #     with: #this packages (cache) for it to use in the test
     #      path: . #note that this path is not influenced
@@ -18,6 +18,6 @@ jobs:
      steps:
      - uses: actions/cache@v3
      - name: run the app
-       run: python app.py &
+       run: python3 app.py &
      - name: test   
        run: sleep 5 && curl localhost:8080 
