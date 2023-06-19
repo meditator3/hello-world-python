@@ -6,8 +6,6 @@ jobs:
      runs-on: self-hosted
      steps:
       - uses: actions/checkout@v3
-      - name: who am i?
-        run : whoami
       - name: install requirements
         run: pip3 install -r requirements.txt
         
