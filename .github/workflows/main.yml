@@ -6,8 +6,11 @@ jobs:
      runs-on: self-hosted
      steps:
       - uses: actions/checkout@v3
+      - name: who am i?
+        run : whoami
       - name: install requirements
         run: pip3 install -r requirements.txt
+        
   #    - uses: actions/cache@v3
    #     with: #this packages (cache) for it to use in the test
     #      path: . #note that this path is not influenced
