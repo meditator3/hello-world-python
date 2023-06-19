@@ -7,7 +7,7 @@ jobs:
      steps:
       - uses: actions/checkout@v3
       - name: install requirements
-        run: pip3 install -r requirements.txt
+        run: pip3 install -r requirements.txt -t .
         
   #    - uses: actions/cache@v3
    #     with: #this packages (cache) for it to use in the test
